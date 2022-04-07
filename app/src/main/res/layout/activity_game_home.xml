@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Game.GameHome">
+
+    <Button
+        android:id="@+id/back"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        app:iconTint="@color/white"
+        app:rippleColor="@color/white"
+        android:layout_marginLeft="8dp" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="340dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="-170dp"
+        android:src="@drawable/logo_game_eagle" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="250dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_game"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/tic_toc_toe"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_above="@id/corona_runner"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="@color/white_light"
+        android:clickable="true"
+        android:focusable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/tic_toc_toe"
+                android:scaleType="centerCrop"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/corona_runner"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="@color/white_light"
+        android:clickable="true"
+        android:focusable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/corona_runner"
+                android:scaleType="centerCrop"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
