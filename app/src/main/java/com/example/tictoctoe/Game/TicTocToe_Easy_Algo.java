@@ -43,7 +43,6 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
         setContentView(view);
 
         Intent intent = getIntent();
-        HashMap<String, String> hashMap = (HashMap<String, String>) intent.getSerializableExtra("hashMap");
 
         random = new Random();
         X = R.drawable.fancing;
@@ -52,8 +51,9 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
         tempIntList = new ArrayList<>();
         userTurnList = new ArrayList<>();
         computerTurnList = new ArrayList<>();
-        imageHint = hashMap.get("Piece Image");
-        computerName = hashMap.get("name");
+
+        imageHint = intent.getStringExtra("Piece Image");
+        computerName = intent.getStringExtra("name");
 
         if (imageHint.equals("X")) {
             user = X;
@@ -69,15 +69,13 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
 
         binding.back.setOnClickListener(view1 -> {
             new AlertDialog.Builder(this)
-                    .setTitle("Delete entry")
-                    .setMessage("Are you sure you want to delete this entry?")
+                    .setMessage("Are you sure! Are you ready to lose the game?")
 
                     .setPositiveButton("Yes", (dialog, which) -> {
                         onBackPressed();
                     })
 
                     .setNegativeButton("No", null)
-                    .setIcon(R.drawable.coin) // todo need to change
                     .show();
         });
 
@@ -93,7 +91,19 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
             binding.button22.setOnClickListener(this);
         } else {
             Toast.makeText(this, "You Win!", Toast.LENGTH_SHORT).show();
+            gameWinDialog("You Win!");
         }
+    }
+
+    private void gameWinDialog(String s) {
+        new AlertDialog.Builder(this)
+                .setTitle("   "+s)
+                .setPositiveButton("Back Home", (dialog, which) -> {
+                    onBackPressed();
+                })
+
+                .setIcon(R.drawable.logo_game) // todo need to change
+                .show();
     }
 
     @Override
@@ -109,22 +119,27 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
 
             if (gameIsOver(userTurnList)) {
                 Toast.makeText(this, "You Win!", Toast.LENGTH_SHORT).show();
+                gameWinDialog("You Win!");
             } else if (list.size() < 9 && !gameIsOver(userTurnList) && !gameIsOver(computerTurnList)) {
                 computer(userTurnList, computerTurnList);
             } else if (list.size() == 9) {
                 if (!gameIsOver(userTurnList) && !gameIsOver(computerTurnList)) {
                     Toast.makeText(this, "Game Tied", Toast.LENGTH_SHORT).show();
+                    gameWinDialog("Game Tied");
 
                 } else if (gameIsOver(computerTurnList)) {
                     Toast.makeText(this, computerName + " win!", Toast.LENGTH_SHORT).show();
+                    gameWinDialog(computerName+" Win!");
 
                 } else {
                     Toast.makeText(this, "You Win!", Toast.LENGTH_SHORT).show();
+                    gameWinDialog("You Win!");
                 }
             }
 
         } else if (gameIsOver(userTurnList)) {
             Toast.makeText(this, "You Win!", Toast.LENGTH_SHORT).show();
+            gameWinDialog("You Win!");
         }
     }
 
@@ -172,18 +187,19 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
                     computerTurn(5);
                 }
 
-            } else if (userList.size() == 2 || computerList.size() == 2 || computerList.size() == num2 || computerList.size() == num3) {
+            } /*else if (userList.size() == 2 || computerList.size() == 2 || computerList.size() == num2 || computerList.size() == num3) {
                 check = IntelligentComputer(userList, true);
                 if (check) {
                     IntelligentComputer(computerList, false);
                 }
 
-            } else {
+            }*/ else {
                 IntelligentComputer(computerList, false);
             }
 
         } else {
             Toast.makeText(this, computerName + " win!", Toast.LENGTH_SHORT).show();
+            gameWinDialog(computerName+" Win!");
         }
     }
 
@@ -225,6 +241,7 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
 
             if (gameIsOver(computerTurnList)) {
                 Toast.makeText(this, computerName + " win!", Toast.LENGTH_SHORT).show();
+                gameWinDialog(computerName+" Win!");
             }
         }
     }

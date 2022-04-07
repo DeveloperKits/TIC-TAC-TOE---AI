@@ -11,7 +11,6 @@ import com.example.tictoctoe.EnterGameDialog;
 import com.example.tictoctoe.R;
 import com.example.tictoctoe.databinding.ActivityGameHomeBinding;
 
-
 public class GameHome extends AppCompatActivity {
 
     private ActivityGameHomeBinding gameHomeBinding;
@@ -23,7 +22,7 @@ public class GameHome extends AppCompatActivity {
         View view = gameHomeBinding.getRoot();
         setContentView(view);
 
-        //gameHomeBinding.coronaRunner.setOnClickListener(view1 -> startActivity(new Intent(this, Corona_Runner.class)));
+        gameHomeBinding.offline.setOnClickListener(view1 -> startActivity(new Intent(this, Offline.class)));
 
         gameHomeBinding.ticTocToe.setOnClickListener(view1 -> {
             @SuppressLint("InflateParams") View mView = getLayoutInflater().inflate(R.layout.custom_dialog_enter_game,null);

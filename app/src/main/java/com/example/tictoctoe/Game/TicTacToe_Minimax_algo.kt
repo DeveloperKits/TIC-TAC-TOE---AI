@@ -1,21 +1,20 @@
 package com.example.tictoctoe.Game
 
 import android.app.AlertDialog
-import android.app.Dialog
-import android.content.Intent
+import android.content.DialogInterface
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.view.Window
-import android.widget.*
+import android.widget.GridLayout
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.tictoctoe.Board
 import com.example.tictoctoe.Cell
 import com.example.tictoctoe.R
 import kotlinx.android.synthetic.main.activity_tic_tac_toe_minimax_algo.*
-import java.util.*
 
 class TicTacToe_Minimax_algo : AppCompatActivity() {
 
@@ -44,10 +43,9 @@ class TicTacToe_Minimax_algo : AppCompatActivity() {
         O = R.drawable.yinyang
 
         val intent = intent
-        val hashMap = intent.getSerializableExtra("hashMap") as HashMap<*, *>?
 
-        imageHint = hashMap?.get("Piece Image") as String?
-        name = hashMap?.get("name") as String?
+        imageHint = intent.getStringExtra("Piece Image")
+        name = intent.getStringExtra("name")
 
         opponent_name.text = name
 
@@ -160,16 +158,27 @@ class TicTacToe_Minimax_algo : AppCompatActivity() {
 
                 board.hasComputerWon() -> {
                     Toast.makeText(this@TicTacToe_Minimax_algo, "$name Won", Toast.LENGTH_SHORT).show()
+                    gameWinDialog("$name Won!")
                 }
                 board.hasPlayerWon() -> {
                     Toast.makeText(this@TicTacToe_Minimax_algo, "You Won", Toast.LENGTH_SHORT).show()
+                    gameWinDialog("You Won!")
                 }
                 board.isGameOver -> {
                     Toast.makeText(this@TicTacToe_Minimax_algo, "Game Tied", Toast.LENGTH_SHORT).show()
+                    gameWinDialog("Game Tied")
                 }
 
             }
         }
+    }
+
+    private fun gameWinDialog(s: String) {
+        androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("   $s")
+                .setPositiveButton("Back Home") { dialog: DialogInterface?, which: Int -> onBackPressed() }
+                .setIcon(R.drawable.logo_game)
+                .show()
     }
 
 }

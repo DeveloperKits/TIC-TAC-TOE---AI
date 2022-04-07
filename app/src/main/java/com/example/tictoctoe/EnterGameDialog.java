@@ -20,6 +20,7 @@ public class EnterGameDialog {
 
     private final Context context;
     private final View view;
+    private boolean isHard = true;
 
     public EnterGameDialog(Context context, View view) {
         this.context = context;
@@ -37,6 +38,14 @@ public class EnterGameDialog {
 
         gameBinding.cancel.setOnClickListener(view1 -> alertDialog.dismiss());
 
+        gameBinding.radioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == R.id.radioButton2) {
+                isHard = false;
+            }else {
+                isHard = true;
+            }
+        });
+
         gameBinding.done.setOnClickListener(view1 -> {
 
             Random random = new Random();
@@ -46,16 +55,6 @@ public class EnterGameDialog {
             String[] OpponentName = {"Toyota", "Mega Man", "Awesom-O", "Bishop", "Clank", "Daft Punk", "Roboto", "Robbie",
                     "Astro Boy", "Roomba", "Cindi", "Rosie", "Terminator", "Sojourner", "Rodriguez", "Wall-E"};
 
-            boolean isHard = true;
-            if (gameBinding.radioButton2.isChecked()){
-                isHard = false;
-
-            }
-
-            HashMap<String, String> add = new HashMap<>();
-            add.put("Piece Image", piece[x]);
-            add.put("name", OpponentName[y]);
-
             Intent intent;
 
             if (isHard){
@@ -64,7 +63,11 @@ public class EnterGameDialog {
                 intent = new Intent(context, TicTocToe_Easy_Algo.class);
             }
 
-            intent.putExtra("hashmap", add);
+            intent.putExtra("Piece Image", piece[x]);
+            intent.putExtra("name", OpponentName[y]);
+            context.startActivity(intent);
+
+            alertDialog.dismiss();
 
         });
 

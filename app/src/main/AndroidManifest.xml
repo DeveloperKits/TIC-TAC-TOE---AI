@@ -4,15 +4,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_game"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_game"
         android:supportsRtl="true"
         android:theme="@style/Theme.TICTOCTOE">
-        <activity android:name=".Game.TicTacToe_Minimax_algo"/>
-        <activity android:name=".Game.TicTocToe_Easy_Algo"/>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Game.GameHome">
+        <activity android:name=".Game.Offline" />
+        <activity android:name=".Game.TicTacToe_Minimax_algo" />
+        <activity android:name=".Game.TicTocToe_Easy_Algo" />
+        <activity android:name=".Game.GameHome" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

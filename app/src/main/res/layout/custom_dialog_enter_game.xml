@@ -42,8 +42,8 @@
         android:gravity="center_horizontal"
         android:layout_below="@id/cancel"/>
 
-    <LinearLayout
-        android:id="@+id/entry_fee_layout"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tv_entry_fee"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Easy" />
-    </LinearLayout>
+    </RadioGroup>
 
     <Button
         android:layout_width="150dp"
@@ -81,7 +81,7 @@
         android:layout_marginBottom="15dp"
         android:layout_gravity="center"
         android:id="@+id/done"
-        android:layout_below="@id/entry_fee_layout"
+        android:layout_below="@id/radioGroup"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

@@ -30,9 +30,9 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="250dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="70dp"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/logo_game"/>
 
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_above="@id/corona_runner"
+        android:layout_above="@id/offline"
         android:layout_marginBottom="20dp"
         app:cardCornerRadius="15dp"
         app:cardBackgroundColor="@color/white_light"
@@ -61,7 +61,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/corona_runner"
+        android:id="@+id/offline"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginHorizontal="20dp"
