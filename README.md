@@ -1,6 +1,11 @@
 # TIC-TOC-TOE---AI
 It's a simple game. Which created by useing simple java, kotlin, Material UI, View binding &amp; Android Studio. In this project, you can learn how can game logic work. How to move or animated object.
 
+### Feature:
+1. With Computer:
+ -- Hard Mode (Minimax Algorithm)
+ -- Easy Mode (60% User win)
+2. Offline: (2 players)
 
 # Demo Station: 
 <p align="center" width="100%">
