@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tictoctoe">
+    package="com.recogniseerror.cartoontictoc">
 
     <application
         android:allowBackup="true"
@@ -9,11 +9,19 @@
         android:roundIcon="@drawable/logo_game"
         android:supportsRtl="true"
         android:theme="@style/Theme.TICTOCTOE">
-        <activity android:name=".Game.Offline" />
-        <activity android:name=".Game.TicTacToe_Minimax_algo" />
-        <activity android:name=".Game.TicTocToe_Easy_Algo" />
-        <activity android:name=".Game.GameHome" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Game.Offline"
+            android:exported="true" />
+        <activity
+            android:name=".Game.TicTacToe_Minimax_algo"
+            android:exported="true" />
+        <activity
+            android:name=".Game.TicTocToe_Easy_Algo"
+            android:exported="true" />
+        <activity android:name=".Game.GameHome"
+            android:exported="true" />
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.tictoctoe
+package com.recogniseerror.cartoontictoc
 
 class Board {
     //Strings for PLAYER and COMPUTER

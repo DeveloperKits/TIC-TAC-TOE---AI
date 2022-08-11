@@ -11,7 +11,7 @@
         android:text="Play Game"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/dark_light"
+        android:textColor="@color/text_color_back"
         android:layout_marginTop="-25dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/cancel"/>
@@ -25,9 +25,8 @@
         android:layout_marginEnd="2dp"
         android:layout_marginVertical="2dp"
         app:icon="@drawable/ic_baseline_cancel_24"
-        app:iconTint="@color/black"
-        app:rippleColor="@color/black"
-        android:layout_alignParentRight="true" />
+        app:iconTint="@color/text"
+        app:rippleColor="@color/text" />
 
 
     <TextView
@@ -37,7 +36,7 @@
         android:text="Select Game Type:"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/dark_light"
+        android:textColor="@color/text_color_back"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:layout_below="@id/cancel"/>
@@ -51,7 +50,6 @@
         android:layout_height="wrap_content"
         android:background="@color/Transparent"
         android:orientation="horizontal">
-
 
         <RadioButton
             android:id="@+id/radioButton"
@@ -73,7 +71,7 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="52dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/text"
         android:text="Entry"
         android:textColor="@color/white_light"
         android:textSize="18sp"

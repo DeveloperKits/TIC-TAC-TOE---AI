@@ -42,18 +42,20 @@
         android:id="@+id/logo"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo_game"/>
+        android:layout_marginTop="130dp"
+        android:src="@drawable/logo_game" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/tic_toc_toe"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
         android:layout_marginHorizontal="20dp"
         android:layout_above="@id/offline"
         android:layout_marginBottom="20dp"
         app:cardCornerRadius="15dp"
+        android:layout_centerHorizontal="true"
         app:cardBackgroundColor="@color/white_light"
         android:clickable="true"
         android:focusable="true">
@@ -72,13 +74,14 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/offline"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
         android:layout_marginHorizontal="20dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         app:cardCornerRadius="15dp"
         app:cardBackgroundColor="@color/white_light"
+        android:layout_centerHorizontal="true"
         android:clickable="true"
         android:focusable="true">
 

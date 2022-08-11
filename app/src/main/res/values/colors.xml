@@ -12,6 +12,8 @@
     <color name="red_light">#FFA2A2</color>
     <color name="red_light2">#EF9292</color>
 
+    <color name="text">#6D5541</color>
+
     <color name="statusBar">#283B59</color>
     <color name="colour_bottom_bar">#FB3F8E</color>
     <color name="text_color_back">#404040</color>

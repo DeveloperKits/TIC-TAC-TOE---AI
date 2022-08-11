@@ -1,4 +1,4 @@
-package com.example.tictoctoe.Game;
+package com.recogniseerror.cartoontictoc.Game;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.tictoctoe.R;
+import com.recogniseerror.cartoontictoc.R;
 
 public class Offline extends AppCompatActivity {
 
@@ -40,13 +40,13 @@ public class Offline extends AppCompatActivity {
 
             if (activePlayer == 0) {
 
-                counter.setImageResource(R.drawable.yinyang);
+                counter.setImageResource(R.drawable.o1);
 
                 activePlayer = 1;
 
             } else {
 
-                counter.setImageResource(R.drawable.fancing);
+                counter.setImageResource(R.drawable.x1);
 
                 activePlayer = 0;
 

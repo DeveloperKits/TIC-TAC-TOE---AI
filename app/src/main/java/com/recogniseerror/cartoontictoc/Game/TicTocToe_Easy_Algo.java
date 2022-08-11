@@ -1,4 +1,4 @@
-package com.example.tictoctoe.Game;
+package com.recogniseerror.cartoontictoc.Game;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +10,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.tictoctoe.R;
-import com.example.tictoctoe.databinding.ActivityTicTocToeEasyAlgoBinding;
+import com.recogniseerror.cartoontictoc.R;
+import com.recogniseerror.cartoontictoc.databinding.ActivityTicTocToeEasyAlgoBinding;
 
 import org.paukov.combinatorics3.Generator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -45,8 +44,8 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
         Intent intent = getIntent();
 
         random = new Random();
-        X = R.drawable.fancing;
-        O = R.drawable.yinyang;
+        X = R.drawable.x1;
+        O = R.drawable.o1;
         list = new ArrayList<>();
         tempIntList = new ArrayList<>();
         userTurnList = new ArrayList<>();
@@ -54,6 +53,8 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
 
         imageHint = intent.getStringExtra("Piece Image");
         computerName = intent.getStringExtra("name");
+
+        binding.opponentName.setText(computerName);
 
         if (imageHint.equals("X")) {
             user = X;
@@ -72,7 +73,7 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
                     .setMessage("Are you sure! Are you ready to lose the game?")
 
                     .setPositiveButton("Yes", (dialog, which) -> {
-                        onBackPressed();
+                        super.onBackPressed();
                     })
 
                     .setNegativeButton("No", null)
@@ -95,11 +96,25 @@ public class TicTocToe_Easy_Algo extends AppCompatActivity implements View.OnCli
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure! Are you ready to lose the game?")
+
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    super.onBackPressed();
+                })
+
+                .setNegativeButton("No", null)
+                .show();
+    }
+
     private void gameWinDialog(String s) {
         new AlertDialog.Builder(this)
                 .setTitle("   "+s)
                 .setPositiveButton("Back Home", (dialog, which) -> {
-                    onBackPressed();
+                    super.onBackPressed();
                 })
 
                 .setIcon(R.drawable.logo_game) // todo need to change

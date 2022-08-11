@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".Game.Offline">
 
     <TextView
@@ -13,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TIC TAC TOE"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/text_color_back"
         app:layout_constraintBottom_toTopOf="@+id/fullboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
@@ -26,15 +26,17 @@
     <Button
         android:id="@+id/back"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        app:icon="@drawable/ic_baseline_arrow_back_24"
-        app:iconTint="@color/white"
-        app:rippleColor="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="25dp"
         android:onClick="onClick"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="10dp" />
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        app:iconTint="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/text"
+        tools:ignore="MissingConstraints" />
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/fullboard"
@@ -171,7 +173,7 @@
         android:id="@+id/playAgainLayout"
         android:layout_width="296dp"
         android:layout_height="208dp"
-        android:background="#FFD93B"
+        android:background="@color/statusBar"
         android:orientation="horizontal"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -185,21 +187,20 @@
             android:layout_height="162dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button2"
-            style="@android:style/Widget.Button.Toggle"
             android:layout_width="500dp"
             android:layout_height="50dp"
             android:layout_marginStart="-225dp"
-            android:layout_marginLeft="-225dp"
             android:layout_marginTop="70dp"
             android:layout_marginEnd="70dp"
-            android:layout_marginRight="70dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="@color/white"
             android:onClick="PlayAgain"
             android:text="Play Again"
             android:textStyle="bold" />
@@ -212,7 +213,7 @@
         android:layout_height="wrap_content"
         android:text="Fancing"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.099"
@@ -224,7 +225,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
         android:text="Yinyang"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -238,24 +239,26 @@
         android:id="@+id/imageView10"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.263"
-        app:srcCompat="@drawable/fancing" />
+        app:srcCompat="@drawable/x1" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.243"
-        app:srcCompat="@drawable/yinyang" />
+        app:srcCompat="@drawable/o1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

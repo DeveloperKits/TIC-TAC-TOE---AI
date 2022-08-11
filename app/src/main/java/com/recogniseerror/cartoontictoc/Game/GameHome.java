@@ -1,4 +1,4 @@
-package com.example.tictoctoe.Game;
+package com.recogniseerror.cartoontictoc.Game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.tictoctoe.EnterGameDialog;
-import com.example.tictoctoe.R;
-import com.example.tictoctoe.databinding.ActivityGameHomeBinding;
+import com.recogniseerror.cartoontictoc.EnterGameDialog;
+import com.recogniseerror.cartoontictoc.R;
+import com.recogniseerror.cartoontictoc.databinding.ActivityGameHomeBinding;
 
 public class GameHome extends AppCompatActivity {
 

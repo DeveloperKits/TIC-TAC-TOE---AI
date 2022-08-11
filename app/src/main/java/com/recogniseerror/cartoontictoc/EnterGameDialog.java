@@ -1,4 +1,4 @@
-package com.example.tictoctoe;
+package com.recogniseerror.cartoontictoc;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -7,11 +7,10 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.example.tictoctoe.Game.TicTacToe_Minimax_algo;
-import com.example.tictoctoe.Game.TicTocToe_Easy_Algo;
-import com.example.tictoctoe.databinding.CustomDialogEnterGameBinding;
+import com.recogniseerror.cartoontictoc.Game.TicTacToe_Minimax_algo;
+import com.recogniseerror.cartoontictoc.Game.TicTocToe_Easy_Algo;
+import com.recogniseerror.cartoontictoc.databinding.CustomDialogEnterGameBinding;
 
-import java.util.HashMap;
 import java.util.Random;
 
 public class EnterGameDialog {
@@ -52,8 +51,8 @@ public class EnterGameDialog {
             int x = random.nextInt(2), y = random.nextInt(16);
 
             String[] piece = {"X", "0"};
-            String[] OpponentName = {"Toyota", "Mega Man", "Awesom-O", "Bishop", "Clank", "Daft Punk", "Roboto", "Robbie",
-                    "Astro Boy", "Roomba", "Cindi", "Rosie", "Terminator", "Sojourner", "Rodriguez", "Wall-E"};
+            String[] OpponentName = {"Toyota", "Mega Man", "Betty Boop", "Bishop", "Donald Duck", "Daft Punk", "Roboto", "Robbie",
+                    "Astro Boy", "Roomba", "Cindi", "Olive Oyl", "Popeye", "Sojourner", "Rodriguez", "Garfield"};
 
             Intent intent;
 

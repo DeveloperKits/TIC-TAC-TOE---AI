@@ -5,31 +5,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="350dp"
         android:layout_height="340dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="-200dp"
+        android:alpha="0.7"
+        android:src="@drawable/logo_game_eagle" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="340dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="-170dp"
+        android:layout_marginEnd="-210dp"
+        android:alpha="0.7"
         android:src="@drawable/logo_game_eagle" />
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="350dp"
         android:layout_height="340dp"
+        android:padding="40dp"
         android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:src="@drawable/logo_game"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Powered by Learner"
-        android:textColor="#FFFFFF"
+        android:text="Powered by Recognise Error"
+        android:textColor="@color/text"
         android:textSize="12sp"
         android:alpha="0.6"
         android:visibility="visible"

@@ -1,4 +1,4 @@
-package com.example.tictoctoe.Game
+package com.recogniseerror.cartoontictoc.Game
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -11,9 +11,9 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.tictoctoe.Board
-import com.example.tictoctoe.Cell
-import com.example.tictoctoe.R
+import com.recogniseerror.cartoontictoc.Board
+import com.recogniseerror.cartoontictoc.Cell
+import com.recogniseerror.cartoontictoc.R
 import kotlinx.android.synthetic.main.activity_tic_tac_toe_minimax_algo.*
 
 class TicTacToe_Minimax_algo : AppCompatActivity() {
@@ -39,8 +39,8 @@ class TicTacToe_Minimax_algo : AppCompatActivity() {
         //calling the function to load our tic tac toe board
         loadBoard()
 
-        X = R.drawable.fancing
-        O = R.drawable.yinyang
+        X = R.drawable.x1
+        O = R.drawable.o1
 
         val intent = intent
 
@@ -64,12 +64,22 @@ class TicTacToe_Minimax_algo : AppCompatActivity() {
         back.setOnClickListener {
             val dialog: AlertDialog = AlertDialog.Builder(this)
                     .setMessage("Are you sure! Are you ready to lose the game?")
-                    .setPositiveButton("yes") { dialogInterface, i -> onBackPressed() }
+                    .setPositiveButton("yes") { dialogInterface, i -> super.onBackPressed() }
                     .setNegativeButton("no", null)
                     .create()
             dialog.show()
         }
 
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        val dialog: AlertDialog = AlertDialog.Builder(this)
+                .setMessage("Are you sure! Are you ready to lose the game?")
+                .setPositiveButton("yes") { dialogInterface, i -> super.onBackPressed() }
+                .setNegativeButton("no", null)
+                .create()
+        dialog.show()
     }
 
     //function is mapping
@@ -79,14 +89,14 @@ class TicTacToe_Minimax_algo : AppCompatActivity() {
             for (j in board.board.indices) {
                 when (board.board[i][j]) {
                     Board.PLAYER -> {
-                        boardCells[i][j]?.setImageResource(R.drawable.fancing)
+                        boardCells[i][j]?.setImageResource(user!!)
                         boardCells[i][j]?.setPadding(25, 25, 25, 25)
                         boardCells[i][j]?.isEnabled = false
                     }
                     Board.COMPUTER -> {
                         // For click sound
                         Handler(Looper.getMainLooper()).postDelayed({
-                            boardCells[i][j]?.setImageResource(R.drawable.yinyang)
+                            boardCells[i][j]?.setImageResource(computer!!)
                             boardCells[i][j]?.setPadding(25, 25, 25, 25)
                             boardCells[i][j]?.isEnabled = false
                             //media.buttonSound(this)
@@ -117,7 +127,7 @@ class TicTacToe_Minimax_algo : AppCompatActivity() {
                     leftMargin = 10
                     rightMargin = 10
                 }
-                boardCells[i][j]?.setBackgroundColor(ContextCompat.getColor(this, R.color.red_light2))
+                boardCells[i][j]?.setBackgroundColor(ContextCompat.getColor(this, R.color.text))
 
                 //attached a click listener to the board
                 boardCells[i][j]?.setOnClickListener(CellClickListener(i, j))
@@ -176,7 +186,7 @@ class TicTacToe_Minimax_algo : AppCompatActivity() {
     private fun gameWinDialog(s: String) {
         androidx.appcompat.app.AlertDialog.Builder(this)
                 .setTitle("   $s")
-                .setPositiveButton("Back Home") { dialog: DialogInterface?, which: Int -> onBackPressed() }
+                .setPositiveButton("Back Home") { dialog: DialogInterface?, which: Int -> super.onBackPressed() }
                 .setIcon(R.drawable.logo_game)
                 .show()
     }
